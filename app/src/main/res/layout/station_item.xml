@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvStartStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Station :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvEndStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Station :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvNoOfStations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Stations :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTicketPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ticket Price :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF5722"
+        android:text="Direction :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Path :"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+  <View
+      android:layout_margin="10dp"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="#757171"
+      ></View>
+
+</LinearLayout>

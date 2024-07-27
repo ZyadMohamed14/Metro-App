@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    implementation ("com.google.code.gson:gson:2.8.8")
+    implementation ("com.github.mumayank:AirLocation:2.5.2")
+     //implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

@@ -6,21 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-
-import com.example.metroapp.R;
 
 import java.util.List;
 
-public class MetroAdapter extends BaseAdapter implements SpinnerAdapter {
+public class SpinnerAdapter extends BaseAdapter implements android.widget.SpinnerAdapter {
 
     private Context context;
     private List<String> stationsList;
     private static final int TYPE_LINE = 0;
     private static final int TYPE_STATION = 1;
 
-    public MetroAdapter(Context context, List<String> stationsList) {
+    public SpinnerAdapter(Context context, List<String> stationsList) {
         this.context = context;
         this.stationsList = stationsList;
     }
@@ -31,7 +28,7 @@ public class MetroAdapter extends BaseAdapter implements SpinnerAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public String getItem(int position) {
         return stationsList.get(position);
     }
 
@@ -39,6 +36,7 @@ public class MetroAdapter extends BaseAdapter implements SpinnerAdapter {
     public long getItemId(int position) {
         return 6;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
