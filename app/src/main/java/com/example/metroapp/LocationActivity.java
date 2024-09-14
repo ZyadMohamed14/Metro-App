@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -202,10 +203,14 @@ public class LocationActivity extends AppCompatActivity implements AirLocation.C
 
         return nearestStation;
     }
+    double latitudeOfCurrentLocation;
+    double longitudeOfCurrentLocation;
     @Override
     public void onSuccess(@NonNull ArrayList<Location> locations) {
-        double latitudeOfCurrentLocation = locations.get(0).getLatitude();
-        double longitudeOfCurrentLocation = locations.get(0).getLongitude();
+
+        latitudeOfCurrentLocation = locations.get(0).getLatitude();
+
+        longitudeOfCurrentLocation = locations.get(0).getLongitude();
         nearstStationToCurrentLocation = findNearstStation(latitudeOfCurrentLocation, longitudeOfCurrentLocation);
         currentLocationTv.setText("Nearst Station According to your Location is " + nearstStationToCurrentLocation);
     }
@@ -227,4 +232,13 @@ public class LocationActivity extends AppCompatActivity implements AirLocation.C
     }
 
 
+    public void openMap(View view) {
+        if(latitudeOfCurrentLocation==0.0&&longitudeOfCurrentLocation==0.0){
+            Toast.makeText(this,"Please  enter Locaton Button",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        Intent a=new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="+latitudeOfCurrentLocation+","+longitudeOfCurrentLocation));
+
+          startActivity(a);
+    }
 }

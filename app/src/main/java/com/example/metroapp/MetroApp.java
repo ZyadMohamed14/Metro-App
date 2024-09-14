@@ -707,13 +707,12 @@ public class MetroApp {
             kitKateLine.addAll(metroLine2.subList(cairoIndexAtLine2 + 1, endIndex + 1));
             directionForFirstRoute.append("And Then Take Direction to El-Mounib ");
             directionForSecondRoute.append("And Then Take Direction to El-Mounib ");
-        } else if (endIndex > cairoIndexAtLine2 && endIndex < attabaIndexAtLine2) {
-            subLine.addAll(metroLine2.subList(cairoIndexAtLine2 + 1, endIndex + 1));
+        } else if (endIndex < cairoIndexAtLine2 && endIndex >attabaIndexAtLine2) {
+            subLine.addAll(metroLine2.subList(endIndex, cairoIndexAtLine2 + 1));
             Collections.reverse(subLine);
             kitKateLine.addAll(subLine);
             subLine.clear();
-            attabaLine.addAll(metroLine2.subList(endIndex, attabaIndexAtLine2 + 1));
-            Collections.reverse(attabaLine);
+            attabaLine.addAll(metroLine2.subList(attabaIndexAtLine2, endIndex + 1));
             directionForFirstRoute.append("And Then Take Direction to ShobraEl-Kheima ");
             directionForSecondRoute.append("And Then Take Direction to El-Mounib ");
         } else {
